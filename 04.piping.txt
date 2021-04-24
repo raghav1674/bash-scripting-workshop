@@ -8,5 +8,11 @@
   SYMBOL: |
 
 
+  * Pipe the output of one command to another:
+    =========================================
+
+    grep ^$username: /etc/passwd | cut -f 6 -d ":"
+
+    # returns the home directory of the username provided
 
 

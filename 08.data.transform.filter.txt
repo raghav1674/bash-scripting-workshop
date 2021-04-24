@@ -1,0 +1,61 @@
+
+
+format of the passwd file:
+-------------------------
+
+username:link to /etc/shadows file:userid:groupid:GEKOS:home directory:shell/cmd
+
+
+=> GREP: GLOBAL REGULAR EXPRESSION PRINT:
+   -------------------------------------
+  
+   grep pattern data 
+
+   SOME CONCEPTS OF REGEXP:
+   -----------------------
+   
+   > METACHARACTERS:
+     -------------- 
+     => ^ : Beginning
+     => $ : End 
+     => . : any one character
+     => ! : not 
+     => \ : escape seq
+     => [] : any one of the character inside square bracket 
+     => () : grouping pattern
+     => + : one or many 
+     => * : zero or many 
+    
+
+
+=> CUT:
+   ---
+   -> split the data based on the delimiter(default is space)
+
+   * cut -f fieldNumber  -d delimiter  data 
+
+   eg:
+   --
+    cut -f 6 -d ":" /etc/passwd 
+      
+        output : returns home directory field from /etc/passwd file
+       ------
+    
+  * Pipe the output of one command to another:
+    =========================================
+   
+    grep ^$username: /etc/passwd | cut -f 6 -d ":" 
+
+    # returns the home directory of the username provided 
+
+
+=> INTERPOLATE THE VALUE OF VARIABLE AND THEN EXECUTE COMMAND:
+   ----------------------------------------------------------
+
+	-> use ${variablename}
+ 
+   read -p "Enter your name" name 
+   
+   home_dir=(grep ^${name}: /etc/passwd | cut -f 6 -d ":")  
+
+   

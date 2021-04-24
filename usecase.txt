@@ -46,16 +46,40 @@
    # test if the name variable is empty or not 
     
    if [ -z $name ]
-     then
+    
+    then
+    
      # check if user exists or not , if exists then lock it 
+   
      if id $name &> /dev/null 
-       then 
-         passwd -l $name 
-         exit 0 # lock and exit 
-     else 
+   
+       then
+
+	 # retireving the homeDir  of user
+ 
+         homeDir=(grep ^${name}: /etc/passwd | cut -f 6 -d ":") 
+
+	 # check if homedirectory exists or not 
+
+	 if [ -d $homeDir ]
+
+         then 
+
+           # if homeDir exists, lock user and create backup of homeDir
+
+             passwd -l $name 
+
+             tar -cf ${name}-$(date +%F).tar $homeDir
+
+             exit 0 # lock and exit 
+ 
+    else 
+
          echo "$user doesn't exists"
     fi
+
    fi 
+
   done
 
 

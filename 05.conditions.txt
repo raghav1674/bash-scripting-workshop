@@ -23,7 +23,28 @@
      eg:
      -- 
      => test a1 == a2 
- 
+  
+  
+  test options:
+  =============
+   SYNTAX: test -[zn] string  
+   ------ 
+	1. -z: check if value of variable is empty or not if empty then returns 0 else 1 
+        2. -n: check if value of variable is empty then return 1 else 0
+    
+
+   FILE OPTIONS:
+   ------------
+    SYNTAX: test -[xwsredf] filename
+    ------
+      1. -x : if file is granted execute permission
+      2. -w : if file is granted write permission
+      3. -s : if file exists and is a socket
+      4. -r : if file can be read
+      5. -e : if file exists or not
+      6. -d : if file exists and is a directory
+      7. -f : if file exists and is a file
+
   -> [ 1 -le 2 ]  : this square bracket returns exit code     
  
 
