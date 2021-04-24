@@ -1,0 +1,41 @@
+# FIRST CUSTOM SCRIPT TO TAKE INPUT FROM THE STDIN:
+  ------------------------------------------------
+
+# CREATING VARIABLE AND ASSIGNING VALUE:
+  --------------------------------------
+var = value 
+
+- command [options(-) (--)] arguments (positional arguments) 
+    $0                         $1(argument 1)   ..  $4(argument 4)
+ [command path]
+ 
+
+# READING ARGUMENTS FROM THE CMD LINE ( CMD LINE ARGUMENTS ):
+-------------------------------------------------------------
+  var = $1 
+
+  echo "hello $var"
+
+
+- VARIABLE LENGTH ARGUMENTS:
+  --------------------------
+  - variable: @ : array containig all the positional arguments 
+
+  e.g:
+   varargs.sh 
+   ----------
+
+   #!/bin/bash 
+   
+   echo $@;
+
+   RUN: varargs.sh hello hi how are you 
+   --- 
+
+   OUTPUT: hello hi how are you 
+   ------
+
+
+
+
+

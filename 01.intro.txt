@@ -1,0 +1,54 @@
+- Two Ways of interacting with the OS:
+  -----------------------------------
+
+  - GUI 
+  - CLI 
+
+
+- Status code of the command is decided by the developer of the command.
+
+- SHELL VARIABLES:
+  ---------------
+
+  - SHELL: current shell
+    -----
+  - USER: current login user
+    ----
+  - PATH: when we execute the command the os will look for the path of the executables 
+
+  - ?: Status Code of the command.
+    --
+
+- PRINT THE VALUE OF VARIABLE:
+  ---------------------------
+  echo $VARIABLE 
+
+  eg: echo $SHELL 
+
+- SOME COMMANDS:
+  -------------
+
+  - date
+  - cal 
+  - which 
+
+
+- ADD OUR EXECUTABLE TO THE PATH:
+  ------------------------------
+ 
+  1. export PATH=PATH_OF_EXECUTABLE:$PATH 
+ 
+  2. add the PATH to:
+
+	- /etc/profile : global ( not called for user with nologin shell)
+        - ~/.bash_profile: user specific
+        - ~/.bashrc: user specific variables for bash shell (will be run for every shell)
+ 
+
+  3. the permission should be executable (chmod 777 filepath)
+
+- cmd.sh 
+  ------
+
+  #!/bin/bash (interpreter to use to run this command)
+  echo hello

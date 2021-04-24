@@ -1,0 +1,43 @@
+- LOOP:
+  ----
+
+> when we want to iterate over list of arguments or perform same operation with large amount of data 
+  
+  FOR LOOP:
+  --------
+
+  for i in list;do (command) ; done
+
+     OR
+
+  for i in list
+    do 
+      echo $i
+  done 
+
+
+  eg:
+  --
+   for i in a b c d e;do echo $i;done
+
+  OUTPUT: a b c d e
+  ------
+
+
+> CREATING ARRAY IN BASH SHELL:  
+  ----------------------------
+
+  # creating an array delimiter is space 
+  myarray = "1 2 3 4 5 6"
+  
+  # creating a array with range 
+  myarray2 = 1..6 
+
+  # looping through myarray variable
+  for element in $myarray; do echo $element;done 
+  
+  # output 
+    1 2 3 4 5 6 
+
+
+
