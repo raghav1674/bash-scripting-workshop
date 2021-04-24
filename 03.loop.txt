@@ -40,4 +40,31 @@
     1 2 3 4 5 6 
 
 
+# READING LIST FROM THE FILE AND THEN ITERATING:
+  ---------------------------------------------
+
+  > cat filename: print the content of the file 
+
+  # store the result of the command in $() and then assign to x
+
+  > x = $(cat filename) 
+ 
+  eg: Reading the user infor from file and then create user
+ 
+   suppose db.csv:
+   --------------
+   user1
+   user2
+   user3
+
+
+ 
+  > for user in $(cat db.csv);do useradd $user;done 
+
+ # OUTPUT:
+ --------
+ user1
+ user2
+ user3 
+
 

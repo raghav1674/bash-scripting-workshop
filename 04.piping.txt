@@ -1,0 +1,11 @@
+- `command_name` or $(command_name) : first execute then assign value 
+   eg:
+    x=`date`  or  x=$(date) 
+
+    
+- PIPE: send the output of one command as input to another command 
+  
+  SYMBOL: |
+
+
+
