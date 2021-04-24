@@ -76,3 +76,9 @@ while condition
     ....
 done 
 
+eg:
+--
+  while [ 1 -eq 2 ]
+    do 
+     echo "hi"
+  done 

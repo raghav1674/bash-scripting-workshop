@@ -1,4 +1,5 @@
 
+
 - ==
 - !==
 - > : have special meaning so use for comparison with datatypes other than strong:
@@ -9,6 +10,10 @@
  	-> -gt: greator than 
 - <
 
+
+- if while needs a command which returns an exit code and based on exit code they will further execute thier block of code.
+
+- we can use test condition or [ condition ] to return the exit code which we can use in conditional statements.
 
 - testing condition:
   =================
