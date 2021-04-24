@@ -1,0 +1,20 @@
+- > : Output Redirection
+- < : Input Redirection
+- >>: Append  
+
+- > /dev/null : send the output to the null device ( i.e. i dont want to see the output of the command)
+
+0: stdin
+1: stdout
+2: stderr
+&: stdout & stderr 
+
+
+DEFAULT NATURE:
+--------------
+
+=> if command executed succesfully, and some output is returned by that command   ,it is send over pipe 1 to stdout ie  command 1> , if error then command 2> 
+   but if we don't know that the command will return err or success out,
+
+command &> 
+

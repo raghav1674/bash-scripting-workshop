@@ -35,7 +35,12 @@ var = value
    OUTPUT: hello hi how are you 
    ------
 
+- USING `read` COMMAND:
+  --------------------
 
+  => read -p 'Enter your name: ' n
 
+  # read the input from stdin and store it in variable n
 
+  => echo $n  # printing the value of variable n 
 

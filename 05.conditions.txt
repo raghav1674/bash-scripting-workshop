@@ -1,0 +1,60 @@
+
+- ==
+- !==
+- > : have special meaning so use for comparison with datatypes other than strong:
+	-> -ge: greater than or equal to 
+        -> -ne: not equal to 
+        -> -lt: less than 
+	-> -eq: equal to
+ 	-> -gt: greator than 
+- <
+
+
+- testing condition:
+  =================
+ 
+  -> test (condition):
+     --------------
+     eg:
+     -- 
+     => test a1 == a2 
+ 
+  -> [ 1 -le 2 ]  : this square bracket returns exit code     
+ 
+
+IF CONDITION:
+============
+
+=> if is designed in such a way which checks for the exit code of the command and if the exit code is 0 it will run its block of code.
+
+eg:
+--
+create user only if not present:
+-------------------------------
+db.csv
+-----
+user1
+user2
+user3
+
+check_for_user.sh:
+-----------------
+
+for user in $(cat db.csv)
+  do
+    if id $user &> /dev/null  # don't want the output to be printed on screen
+      then
+         echo '$user already present'  
+    else
+       if useradd $user 
+         then
+           echo 'new user created: $user successfully'
+      else
+         echo 'user: $user not created'
+      endif 
+    endif
+done
+-----------*******************************************-----------------------
+
+
+

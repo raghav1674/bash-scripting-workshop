@@ -68,3 +68,11 @@
  user3 
 
 
+WHILE LOOP: (runs until condition is not false ie exit code is not 1)
+----------
+
+while condition 
+  do
+    ....
+done 
+

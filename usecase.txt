@@ -1,0 +1,57 @@
+# P1: READ DATA FROM FILE AND CREATE USER IF NOT EXISTS:
+  -----------------------------------------------------
+
+ SOLUTION:
+ --------
+
+  db.csv
+  -----
+  user1
+  user2
+  user3
+
+  check_for_user.sh:
+  -----------------
+
+  for user in $(cat db.csv)
+    do
+      if id $user &> /dev/null  # don't want the output to be printed on screen
+        then
+           echo '$user already present'
+      else
+         if useradd $user
+           then
+             echo 'new user created: $user successfully'
+        else
+           echo 'user: $user not created'
+        endif
+      endif
+  done
+
+# P2: Whenever user log in , lock that user and backup their home dir:
+  -------------------------------------------------------------------
+
+  SOLUTION:
+  --------
+   
+   #!/usr/bin/bash 
+ 
+   # read the input from stdin and store in name variable
+
+   read -p 'Enter your name: ' name
+	  
+   # test if the name variable is empty or not 
+   
+   if [ -z $name ]
+     then
+     # check if user exists or not , if exists then lock it 
+     if id $name &> /dev/null 
+       then 
+         passwd -l $name 
+     else 
+         echo "$user doesn't exists"
+     endif
+   endif 
+
+
+
