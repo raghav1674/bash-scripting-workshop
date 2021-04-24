@@ -28,10 +28,11 @@
 - SOME COMMANDS:
   -------------
 
-  - date
-  - cal 
-  - which 
-
+  - date: date
+  - cal: calendar
+  - which: to know the path of the script
+  - exit: to exit the current shell 
+  - man: manual of the command
 
 - ADD OUR EXECUTABLE TO THE PATH:
   ------------------------------

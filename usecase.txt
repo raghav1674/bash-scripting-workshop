@@ -24,8 +24,8 @@
              echo 'new user created: $user successfully'
         else
            echo 'user: $user not created'
-        endif
-      endif
+       fi
+      fi
   done
 
 # P2: Whenever user log in , lock that user and backup their home dir:
@@ -34,24 +34,29 @@
   SOLUTION:
   --------
    
-   #!/usr/bin/bash 
- 
-   # read the input from stdin and store in name variable
+ #!/usr/bin/bash 
+  
+  # infinite loop
+  while :
+   
+  # read the input from stdin and store in name variable
 
    read -p 'Enter your name: ' name
 	  
    # test if the name variable is empty or not 
-   
+    
    if [ -z $name ]
      then
      # check if user exists or not , if exists then lock it 
      if id $name &> /dev/null 
        then 
          passwd -l $name 
+         exit 0 # lock and exit 
      else 
          echo "$user doesn't exists"
-     endif
-   endif 
+    fi
+   fi 
+  done
 
 
 

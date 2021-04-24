@@ -81,4 +81,12 @@ eg:
   while [ 1 -eq 2 ]
     do 
      echo "hi"
-  done 
+  done
+
+
+INFINITE LOOP USING WHILE:
+-------------------------
+ while :
+  do 
+   ...
+ done  

@@ -32,6 +32,25 @@ IF CONDITION:
 
 => if is designed in such a way which checks for the exit code of the command and if the exit code is 0 it will run its block of code.
 
+SYNTAX:
+------
+
+if condition
+  then 
+    ....
+fi
+
+
+if condition
+  then 
+    ....
+else
+    ....
+fi   
+
+ 
+
+
 eg:
 --
 create user only if not present:
@@ -56,8 +75,8 @@ for user in $(cat db.csv)
            echo 'new user created: $user successfully'
       else
          echo 'user: $user not created'
-      endif 
-    endif
+      fi 
+    fi
 done
 -----------*******************************************-----------------------
 
