@@ -2,7 +2,7 @@
 
 - ==
 - !==
-- > : have special meaning so use for comparison with datatypes other than strong:
+- > : have special meaning so use for comparison with datatypes other than string:
 	-> -ge: greater than or equal to 
         -> -ne: not equal to 
         -> -lt: less than 
