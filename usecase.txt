@@ -45,7 +45,7 @@
 	  
    # test if the name variable is empty or not 
     
-   if [ -z $name ]
+   if [ -z "$name" ]
     
     then
     
@@ -61,13 +61,13 @@
 
 	 # check if homedirectory exists or not 
 
-	 if [ -d $homeDir ]
+	 if [ -d "$homeDir" ]
 
          then 
 
            # if homeDir exists, lock user and create backup of homeDir
 
-             passwd -l $name 
+             passwd -l "$name" 
 
              tar -cf ${name}-$(date +%F).tar $homeDir
 
@@ -83,4 +83,13 @@
   done
 
 
+3. FREQUENCY SORT WORDS:
+   -------------------- 
 
+  SOLUTION: first remove spaces then sort it and find uniq and then sort
+  -------- 
+
+     cat filename | tr -s ' ' '\n' | sort | uniq -c | sort -n -r | awk '{ print $2,$1 }'
+
+
+ 

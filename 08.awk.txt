@@ -1,0 +1,62 @@
+AWK:
+--- 
+> can do programming syntax is much like c 
+
+PRINT THE COLUMN:
+----------------
+
+awk -F: '{ print $1 }' file 
+
+-F: field separator 
+$COLUMN_NUMBER: $0 means the entire row
+
+* uniq: remove duplicates  
+  ----
+   options:
+    -c : count per string 
+ 
+
+* sort: sort 
+  ---- 
+  options:   
+   -n : sort based on number 
+   -k : field Number 
+   -r: reverse 
+
+* tail:  retrieve the lines from the end  
+  ----
+    options:
+    -n: number of lines to show 
+
+* head: retrieve the lines from the beginning
+  ---- 
+    options:
+    -n: number of lines to show 
+
+
+
+
+# 1. COUNT THE NUMBER OF HITS BY IP:
+
+awk '{ print $1 }' /var/logs/httpd/access_log | sort | uniq -c | sort -k 1 -n 
+
+
+
+# DATE FORMAT IN ACCESS LOGS OF APACHE:
+
+> date +%e/%b/%G 
+
+
+
+# 2: COUNT THE NUMBER OF HITS BY DATE:
+
+grep $(date +%e/%b/%G) access_logs | awk '{ print $1 }' /var/logs/httpd/access_log | uniq -c | sort -k 1 -n
+
+
+# 3:COUNT pages with HTTP Response Code is 404
+
+awk '$9==$HTTP_CODE { print $1 }' access_log 
+
+
+
+

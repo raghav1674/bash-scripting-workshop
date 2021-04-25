@@ -56,6 +56,18 @@ username:link to /etc/shadows file:userid:groupid:GEKOS:home directory:shell/cmd
  
    read -p "Enter your name" name 
    
-   home_dir=(grep ^${name}: /etc/passwd | cut -f 6 -d ":")  
+   home_dir=(grep ^${name}: /etc/passwd | cut -f 6 -d ":") 
+
+
+=> tr command: 
+   ----------
+   -> translate  
+   -> tr ' ' '\n' : replace space  to newline 
+   options:
+   -------
+     -s : sequeeze the pattern given 
+     tr -s ' ' '\n': sequeeze all the space with new line 
+
+   
 
    

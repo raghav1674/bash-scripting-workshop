@@ -102,4 +102,18 @@ done
 -----------*******************************************-----------------------
 
 
+- AND , OR:
+  --------
+
+  command1 && command2 : if command1 runs, then run command2  
+
+
+  command1 || command2 : any one 
+
+
+  "command1;command2" : run both command irrespective of one other 
+
+
+
+
 
