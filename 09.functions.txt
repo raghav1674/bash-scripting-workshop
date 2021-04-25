@@ -1,0 +1,29 @@
+-> Functions of shell are available also when we don't have path defined   --------------------------------------------------------------------- 
+
+  => DEFINE A FUNCTION:
+     ----------------- 
+
+   function_name(){
+
+          statement1;
+          statement2;
+          
+          $0 $1 ... $N  # get the parameter value 
+		
+          return EXIT_CODE;  # exit code for the shell 
+    }
+
+
+ => CALL A FUNCTION:
+    ---------------
+   
+     function_name  param1 param2 param3 ... paramN 
+
+
+ => REMOVE THE FUNCTION FROM THE CURRENT SHELL:
+    -------------------------------------------
+  
+    unset function_name 
+
+
+
