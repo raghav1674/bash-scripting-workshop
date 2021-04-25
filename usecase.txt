@@ -92,4 +92,24 @@
      cat filename | tr -s ' ' '\n' | sort | uniq -c | sort -n -r | awk '{ print $2,$1 }'
 
 
- 
+
+4. CONVERT FROM COLUMN ORIENTED TO ROW ORIENTED:
+   --------------------------------------------
+
+  data:
+  ----
+
+INPUT:
+-----
+  name  age 
+  alice  21 
+  bob    23
+
+OUTPUT:
+------
+ name alice bob 
+ age 21 23 
+
+SOLUTION:
+---------
+

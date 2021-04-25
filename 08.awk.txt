@@ -8,7 +8,7 @@ PRINT THE COLUMN:
 awk -F: '{ print $1 }' file 
 
 -F: field separator 
-$COLUMN_NUMBER: $0 means the entire row
+$COLUMN_NUMBER: $0 means the entire data
 
 * uniq: remove duplicates  
   ----
@@ -55,8 +55,41 @@ grep $(date +%e/%b/%G) access_logs | awk '{ print $1 }' /var/logs/httpd/access_l
 
 # 3:COUNT pages with HTTP Response Code is 404
 
+HTTP_CODE=200 
 awk '$9==$HTTP_CODE { print $1 }' access_log 
 
 
+# AWK USEFUL VARIABLES:
+  -------------------
+  > awk '{ print NR, $0 }' filename
+  > awk 'NR==RECORD_NUMBER_TO_PRINT { print NR }' filename
+  > awk '{ print NF }' # no of fields ==  num of columns in each row 
+  > awk '{ print $(NF-1) }'  # second last column
+  > awk 'NR==ROW_NUMNER { print $(NF-1) }' filename 
+  > awk 'END { print }' filename  # print last line 
+
+  # NUMBER OF LINES IN FILE:
+    -----------------------
+    > awk 'END { print NR }' filename
+
+
+  # PRINT THE LINES WHICH ARE NOT EMPTY:
+    -----------------------------------
+
+    > awk 'NF > 0' filename  # print record which has num of fields greator than 0.
+
+
+  # PROGRAMMING:
+    -----------
+
+   > awk 'BEGIN { s=0; while(s<10){ print s; s++; }'
+
+   > awk 'BEGIN { for(i=1;i<=10;i++) print i+3 }'
+
+
+  # SEARCHING PATTERN USING AWK:
+    ---------------------------
+
+   awk '/pattern/ { print }' FileName 
 
 

@@ -1,0 +1,9 @@
+=> range=start..end
+
+# CREATE MULTIPLE FILES: photo-start.jpg to photo-end.jpg
+
+=> touch photo-${range}.jpg 
+
+=> match by extension: *.ext 
+   
+

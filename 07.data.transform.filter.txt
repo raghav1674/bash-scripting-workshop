@@ -11,6 +11,13 @@ username:link to /etc/shadows file:userid:groupid:GEKOS:home directory:shell/cmd
   
    grep pattern data 
 
+   Options:
+   -------
+        -n: print the line number 
+        -v: show all line which don't have given pattern
+        -e regex  
+
+
    SOME CONCEPTS OF REGEXP:
    -----------------------
    

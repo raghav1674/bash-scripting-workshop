@@ -1,0 +1,28 @@
+SED: STREAM EDITOR 
+------------------
+
+       |-> s: means whole stream 
+       |
+> sed '[lineNumber] s/search_pattern/new_pattern/'  # replace but not in place 
+> sed -i 's/search_pattern/new_pattern/' # replace in place 
+
+-> sed by default replace the first occurence only
+ 						    |-> g: global 
+   - sed '[lineNumber] s/search_pattern/new_pattern/g'
+
+* USE CASE 1: update the shell of user:
+  ------------------------------------
+
+  => sed -i 'LINE_NUMBER s/bash$/sh/g' /etc/passwd 
+
+
+* To SEE THE LINES WHERE SED HAS REPLACED:
+  ---------------------------------------- 
+          
+     
+  => sed -n 's/search_pattern/new_word/p' fileName 
+                                       |-> p to print 
+
+
+
+

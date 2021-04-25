@@ -114,6 +114,35 @@ done
   "command1;command2" : run both command irrespective of one other 
 
 
+- SWITCH CASE:
+  -----------
+ we can create a command and have options:
+ ----------------------------------------  
+ 
+ case $1 in 
+
+  # when option==-f
+
+  # SYNTAX: pattern_to_match) what_to_do;;
 
 
+   -f) 
+      if [ -n "$2" ]
+           echo "I Know -f"
+      ;;
+   
+  # when option==-d
 
+   -d) echo "I Know -d";;  	
+  	
+   # default  
+
+   *) echo "idk";;
+
+ esac  
+  
+  
+
+# getops  ":op1:op2" : to get the options 
+
+#VALUE OF options in OPTARGS 
